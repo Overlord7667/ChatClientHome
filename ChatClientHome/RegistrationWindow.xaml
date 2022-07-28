@@ -1,0 +1,37 @@
+﻿<Window x:Class="ChatClientHome.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClientHome"
+        xmlns:Reg="clr-namespace:ChatClientHome"
+        mc:Ignorable="d"
+        x:Name="Regist"
+        Title="RegistrationWindow" Height="450" Width="360">
+    <Window.DataContext>
+        <Reg:RegistrationModel></Reg:RegistrationModel>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120*"></RowDefinition>
+            <RowDefinition Height="200*"></RowDefinition>
+            <RowDefinition Height="99*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label>Login</Label>
+            <TextBox Text="{Binding Login,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Password</Label>
+            <TextBox Text="{Binding Pass,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Имя</Label>
+            <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Почта</Label>
+            <TextBox Text="{Binding Mail,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Button Command="{Binding RegClick}" CommandParameter="{Binding ElementName=Regist}" >Вход</Button>
+        </StackPanel>
+    </Grid>
+</Window>
